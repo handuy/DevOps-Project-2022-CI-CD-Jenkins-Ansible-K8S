@@ -1,0 +1,13 @@
+---
+- name: customize nginx
+  hosts: test
+  tasks:
+  - name: check nginx service
+    systemd:
+      name: nginx
+      state: started
+    register: result
+
+  - name: nginx result
+    debug:
+      msg: "{{ result }}"
