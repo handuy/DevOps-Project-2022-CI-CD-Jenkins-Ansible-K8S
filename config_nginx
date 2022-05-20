@@ -3,11 +3,9 @@
   hosts: test
   tasks:
   - name: check nginx service
-    systemd:
-      name: nginx
-      state: started
-    register: result
+    package_facts:
+      manager: auto
 
-  - name: nginx result
+  - name: package_facts result
     debug:
-      msg: "{{ result }}"
+      msg: "{{ ansible_facts.packages }}"
