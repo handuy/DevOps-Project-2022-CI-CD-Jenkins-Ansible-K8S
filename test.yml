@@ -3,6 +3,11 @@
   hosts: test
   become: true
   tasks:
+  - name: install EPEL repo
+    yum: 
+      name: epel-release 
+      state: present
+
   - name: Install nginx
     yum:
       name: nginx
