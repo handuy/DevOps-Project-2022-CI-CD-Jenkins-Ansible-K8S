@@ -8,4 +8,4 @@
 
   - name: package_facts result
     debug:
-      msg: "{{ ansible_facts.packages }}"
+      msg: "{{ ansible_facts.packages['tar'] }}"
